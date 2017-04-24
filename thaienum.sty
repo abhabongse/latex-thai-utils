@@ -1,0 +1,59 @@
+%% thaienum.sty
+%% Author: Abhabongse Janthong
+%
+% This package provides Thai enumeration labels to the 'enumitem' package.
+% It was heavily inspired by the package 'moreenum'.
+% It is released under MIT License because the author thinks that the
+% LaTeX Project Public License is annoying and life is complicated.
+\ProvidesPackage{thaienum}[2017/04/23 v0.1]
+\RequirePackage{alphalph}     % For doubling characters
+
+%%------------------------------------------------------------------
+%%  Expectes 'enumitem' and 'babel-thai' to be loaded.
+%%------------------------------------------------------------------
+\@ifpackageloaded{enumitem}{}{%
+\RequirePackage{enumitem}%
+\PackageWarning{thaienum}{Package 'enumitem' not loaded before 'thaienum' %
+(please load 'enumitem' package before 'thaienum')}%
+}
+\@ifpackageloaded{babel}{}{%
+\PackageError{thaienum}{Package 'babel' not loaded before 'thaienum' %
+(please load 'babel' package before 'thaienum')}%
+{Please load 'babel' package before 'thaienum'}%
+}
+\@ifpackagewith{babel}{thai}{}{%
+\PackageWarning{thaienum}{Package 'babel' not loaded with option 'thai' %
+(please load 'babel' package with option 'thai')}%
+}
+
+%%------------------------------------------------------------------
+%%  Reuses the counter defined by 'babel-thai' package.
+%%      How convenient is that!
+%%  However, note that \thaialph and \thaiAlph will run
+%%      out of counters once it reaches 41 and 44, respectively.
+%%------------------------------------------------------------------
+\AddEnumerateCounter{\thaialph}{\@thaialph}{\thaiNoNen}
+\AddEnumerateCounter{\thaiAlph}{\@thaiAlph}{\thaiNoNen}
+\AddEnumerateCounter{\thainum}{\@thainum}{\thainine}
+\AddEnumerateCounter{\thaibracenum}{\@thaibracenum}{\thainine}
+
+%%-----------------------------------------------------------------
+%%  \thaimultialph and \thaimultiAlph are the multi-character
+%%      version of \thaialph and \thaiAlph, respectively.
+%%  Once the counter reaches \thaiHoNokhuk, it continues with
+%%      \thaiKoKai\thaiKoKai, \thaiKoKai\thaiKhoKhai,
+%%      \thaiKoKai\thaiKhoKhwai, etc.
+%%-----------------------------------------------------------------
+\newalphalph{\@thaimultialph}[alph]{\@thaialph}{41}
+\newcommand*{\thaimultialph}[1]{%
+\expandafter\@thaimultialph\csname c@#1\endcsname%
+}
+\AddEnumerateCounter{\thaimultialph}{\@thaimultialph}{\thaiNoNen}
+
+\newalphalph{\@thaimultiAlph}[alph]{\@thaiAlph}{41}
+\newcommand*{\thaimultiAlph}[1]{%
+\expandafter\@thaimultiAlph\csname c@#1\endcsname%
+}
+\AddEnumerateCounter{\thaimultiAlph}{\@thaimultiAlph}{\thaiNoNen}
+
+\endinput

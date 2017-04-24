@@ -1,0 +1,283 @@
+\documentclass[10pt]{ltxguide}
+
+\usepackage[thai,thaiindentfirst]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[sans,sflaksaman,rmnorasi]{fonts-tlwg}
+\usepackage{inconsolata}
+\usepackage{enumitem}
+\usepackage{thaienum}
+\usepackage{multicol}
+\usepackage{setspace}
+
+% There is a bug when loading 'titlesec' so here is the quick hack. https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+\usepackage[sf,bf]{titlesec}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{VeryLightGrayBackground}{gray}{0.96875}
+\definecolor{LightGrayBackground}{gray}{0.9375}
+\definecolor{DarkGray}{gray}{0.25}
+\definecolor{Gray}{gray}{0.5}
+\definecolor{LightGray}{gray}{0.75}
+\definecolor{ShadeColor}{gray}{0.9}
+\definecolor{BorderColor}{gray}{0.8}
+\definecolor{ProcessBlue}{cmyk}{0.96,0,0,0}
+\usepackage{listings}
+\lstset{
+    % Basic Settings
+    basicstyle=\ttfamily,
+    captionpos=b,
+    % Margins and Background
+    xleftmargin=3em,
+    xrightmargin=1em,
+    rulesep=1em,
+    framextopmargin=5em,
+    framexbottommargin=5em,
+    framexleftmargin=1em,
+    framexrightmargin=1em,
+    backgroundcolor=\color{LightGrayBackground},
+    % Spacing and Horizontal Flow
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true,
+    % Vertical Flow
+    aboveskip=\bigskipamount,
+    belowskip=\bigskipamount,
+    lineskip=0.00001pt,
+    % Line Numbers
+    stepnumber=1,
+    numbers=left,
+    numbersep=2em,
+    numberstyle=\ttfamily\color{Gray},
+    % Special Keyword Format
+    stringstyle=\color{Maroon},
+    keywordstyle=\color{NavyBlue},
+    keywordstyle={[2]\color{teal}},
+    commentstyle=\color{ForestGreen},
+    extendedchars=true
+}
+\lstdefinelanguage{LaTeX}{
+    language=[LaTeX]{TeX},
+    sensitive=true
+}
+\usepackage{mdframed}
+
+\setstretch{1.5}
+\addtolength{\topmargin}{-3pc}
+\addtolength{\textwidth}{6pc}
+\addtolength{\oddsidemargin}{-2pc}
+\addtolength{\textheight}{7pc}
+\setlength{\parindent}{2pc}
+\setlength{\parskip}{0pc}
+
+\title{แพ็กเกจ \textlatin{\texttt{thaienum}}}
+\author{อาภาพงศ์ จันทร์ทอง}
+
+\date{เวอร์ชัน 0.1\\23 เมษายน 2017}
+
+\begin{document}
+\maketitle
+
+\section{กล่าวนำ}
+
+แพ็กเกจ \textlatin{\texttt{thaienum}} สำหรับ \textrm{\LaTeX} มีไว้สำหรับเขียนลำดับรายการผ่าน \emph{environment} ชื่อ \textlatin{\texttt{enumerate}} โดยสามารถเลือกใช้การนับแบบไทยได้หลายแบบ เช่น ก ข ค หรือ ๑ ๒ ๓ เป็นต้น
+
+เดิมแล้วหากผู้ใช้งาน \textrm{\LaTeX} ต้องการที่จะพิมพ์ ๑ ๒ ๓ ในรายการ ผู้ใช้งานอาจจำเป็นต้องกำหนดเอง เพราะไม่สามารถกำหนดให้ \textrm{\LaTeX} ไล่รายการโดยอัตโนมัติได้  แพ็กเกจนี้จึงถูกสร้างขึ้นเพื่อแก้ปัญหาดังกล่าว
+
+\section{วิธีใช้งานเบื้องต้น}
+
+\subsection{ก่อนเริ่มใช้งาน}
+
+ก่อนที่ผู้ใช้งานจะนำเข้าแพ็กเกจ \textlatin{\texttt{thaienum}} นีเพื่อใช้งาน ผู้นั้นจำเป็นต้องเรียกนำเข้าแพ็กเกจทั้งสิ้น 2 แพ็กเกจก่อนดังต่อไปนี้
+\begin{enumerate}[topsep=0pc,itemsep=-0.25pc,label={\thaialph*.}]
+    \item  แพ็กเกจ \textlatin{\texttt{babel}} และต้องนำเข้าการใช้งานภาษาไทยด้วย
+    \item  แพ็กเกจ \textlatin{\texttt{enumitem}}
+\end{enumerate}
+
+\bigskip
+โดยสรุปคือผู้ใช้งานสามารถใช้คำสั่งต่อไปนี้เพื่อเริ่มต้นใช้งานแพ็กเกจ \textlatin{\texttt{thaienum}} ได้
+
+\begin{latintext}
+\begin{lstlisting}[language=LaTeX,numbers=none]
+\usepackage[thai]{babel}
+\usepackage{enumitem}
+\usepackage{thaienum}
+\end{lstlisting}
+\end{latintext}
+
+\subsection{เมื่อเลือกใช้งาน}
+
+เมื่อผู้ใช้งานต้องการจะเขียนรายการ สามารถสร้าง \emph{environment} ประเภท \textlatin{\texttt{enumerate}} โดยกำหนดค่าให้กับ \emph{parameter} ที่มีชื่อว่า \textlatin{\texttt{label}} ให้ตรงกับวิธีการนับที่ต้องการ (โปรดดูคู่มือของแพ็กเกจ \textlatin{\texttt{enumitem}} ประกอบ) สำหรับการนับแบบไทย ให้ใช้ค่าจากหนึ่งในรูปแบบดังต่อไปนี้
+
+\begin{enumerate}[topsep=0pc,itemsep=-0.25pc,label={\thainum*.}]
+    \item  \textlatin{\texttt{thaialph}} สำหรับการนับโดยใช้พยัญชนะไทย ก ข ค ง จ \ldots
+    \item  \textlatin{\texttt{thaiAlph}} สำหรับการนับโดยใช้พยัญชนะไทย ก ข ฃ ค ฅ \ldots\, โดยไม่ข้าม ฃ ฅ และ ฆ
+    \item  \textlatin{\texttt{thainum}} สำหรับการนับโดยใช้เลขไทย ๑ ๒ ๓ ๔ ๕ \ldots
+    \item  \textlatin{\texttt{thaibracenum}} สำหรับการนับโดยใช้เลขไทย (๑) (๒) (๓) (๔) (๕) \ldots\, แบบมีวงเล็บ
+\end{enumerate}
+
+\bigskip
+ในบางกรณีที่รายการมีความยาวมาก อาจทำให้พยัญชนะไทยไม่เพียงพอ สามารถเลือกใช้การนับแบบไทยเพิ่มเติมได้ดังนี้
+
+\begin{enumerate}[topsep=0pc,itemsep=-0.25pc,label={\thainum*.},start=5]
+    \item  \textlatin{\texttt{thaimultialph}} ซึ่งคล้ายกับ \textlatin{\texttt{thaialph}} แต่ว่าถัดจาก ฮ.นกฮูก นั้นรายการถัดไปจะนับใหม่เป็น กก กข กค กง กจ \ldots\, ไปเรื่อย ๆ
+    \item  \textlatin{\texttt{thaimultiAlph}} ซึ่งคล้ายกับ \textlatin{\texttt{thaiAlph}} แต่ว่าถัดจาก ฮ.นกฮูก นั้นรายการถัดไปจะนับใหม่เป็น กก กข กฃ กค กฅ \ldots\, ไปเรื่อย ๆ
+\end{enumerate}
+
+\subsubsection*{ตัวอย่างการใช้งานที่ 1}
+สมมติว่ารายการดังกล่าวเขียนในโค้ด \textrm{\LaTeX} ได้ว่า
+\begin{latintext}
+\begin{lstlisting}[language=LaTeX,numbers=none,escapechar={\^},basicstyle=\linespread{1.5}\ttfamily,lineskip={6pt}]
+\begin{enumerate}[label={\thaialph*.}]
+    \item  ^{\textthai{\small รายการที่หนึ่ง}}^
+    \item  ^{\textthai{\small รายการที่สอง}}^
+    \item  ^{\textthai{\small รายการที่สาม}}^
+    \item  ^{\textthai{\small รายการที่สี่}}^
+    \item  ^{\textthai{\small รายการที่ห้า}}^
+    \item  ^{\textthai{\small รายการที่หก}}^
+    \item  ^{\textthai{\small รายการที่เจ็ด}}^
+    \item  ^{\textthai{\small รายการที่แปด}}^
+\end{enumerate}
+\end{lstlisting}
+\end{latintext}
+
+โค้ดดังกล่าวจะสร้างรายการดังนี้
+\begin{quote}
+    \color{DarkGray}
+    \begin{enumerate}[topsep=0.25pc,itemsep=0pc,label={\thaialph*.}]
+        \item  รายการที่หนึ่ง
+        \item  รายการที่สอง
+        \item  รายการที่สาม
+        \item  รายการที่สี่
+        \item  รายการที่ห้า
+        \item  รายการที่หก
+        \item  รายการที่เจ็ด
+        \item  รายการที่แปด
+    \end{enumerate}
+\end{quote}
+
+\subsubsection*{ตัวอย่างการใช้งานที่ 2}
+สมมติว่ารายการดังกล่าวเขียนในโค้ด \textrm{\LaTeX} ได้ว่า
+\begin{latintext}
+\begin{lstlisting}[language=LaTeX,numbers=none,escapechar={\^},basicstyle=\linespread{1.5}\ttfamily,lineskip={6pt}]
+\begin{enumerate}[label={\thainum*)}]
+    \item  ^{\textthai{\small รายการที่หนึ่ง}}^
+    \item  ^{\textthai{\small รายการที่สอง}}^
+    \item  ^{\textthai{\small รายการที่สาม}}^
+    \item  ^{\textthai{\small รายการที่สี่}}^
+    \item  ^{\textthai{\small รายการที่ห้า}}^
+    \item  ^{\textthai{\small รายการที่หก}}^
+    \item  ^{\textthai{\small รายการที่เจ็ด}}^
+    \item  ^{\textthai{\small รายการที่แปด}}^
+\end{enumerate}
+\end{lstlisting}
+\end{latintext}
+
+โค้ดดังกล่าวจะสร้างรายการดังนี้
+\begin{quote}
+    \color{DarkGray}
+    \begin{enumerate}[topsep=0.25pc,itemsep=0pc,label={\thainum*)}]
+        \item  รายการที่หนึ่ง
+        \item  รายการที่สอง
+        \item  รายการที่สาม
+        \item  รายการที่สี่
+        \item  รายการที่ห้า
+        \item  รายการที่หก
+        \item  รายการที่เจ็ด
+        \item  รายการที่แปด
+    \end{enumerate}
+\end{quote}
+
+\subsubsection*{ตัวอย่างการใช้งานที่ 3}
+โปรดดู \emph{source code} ของไฟล์นี้ประกอบ ตัวอย่างนี้ต้องการแสดงให้เห็นว่าเมื่อรายการมีความยาวมากกว่าจำนวนพยัญชนะแล้ว การใช้งาน \textlatin{\texttt{thaimultialph}} จะทำให้รายการมีหน้าตาออกมาอย่างไร
+
+\begin{multicols}{4}
+    \small
+    \begin{enumerate}[topsep=0em,itemsep=0em,label={\thaimultialph*.}]
+        \item  First item.
+        \item  Second item.
+        \item  Third item.
+        \item  Fourth item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+    \end{enumerate}
+    \begin{enumerate}[topsep=0em,itemsep=0em,label={({\thainum*})}]
+        \item  First item.
+        \item  Second item.
+        \item  Third item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+        \item  Other item.
+    \end{enumerate}
+\end{multicols}
+
+\end{document}
