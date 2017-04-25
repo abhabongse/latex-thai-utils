@@ -1,6 +1,6 @@
-# LaTeX 'thaienum' package
+# LaTeX Thai Enumeration Package
 
-This package provides a convenient command to use Thai alphabets (ก ข ค ...) or Thai numerals (๑ ๒ ๓ ...) as labels in `enumerate` environment.
+LaTeX **thaienum** package provides a convenient command to use Thai alphabets (ก ข ค ...) or Thai numerals (๑ ๒ ๓ ...) as labels in `enumerate` environment.
 
 ## Package maintenance
 
