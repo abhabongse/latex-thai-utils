@@ -141,51 +141,51 @@
 %%------------------------------------------------------------------
 %%  Document information
 %%------------------------------------------------------------------
-\title{แพ็ก{\wbr}เก{\wbr}จ \textlatin{\texttt{thaienum}}}
-\author{อาภา{\wbr}พงศ์ จันทร์{\wbr}ทอง}
+\title{แพ็กเกจ \textlatin{\texttt{thaienum}}}
+\author{อาภาพงศ์ จันทร์ทอง}
 
 \date{เวอร์ชัน 0.2\\30 เมษายน 2017}
 
 \begin{document}
 \maketitle
 
-\section{กล่าว{\wbr}นำ}
+\section{กล่าวนำ}
 
-โดย{\wbr}ปกติ{\wbr}แล้ว หาก{\wbr}ผู้{\wbr}ใช้งาน \textlatin{\textrm\LaTeX} ต้องการ{\wbr}ที่{\wbr}จะ{\wbr}เขียน{\wbr}ลำดับ{\wbr}รายการ{\wbr}โดย{\wbr}ที่{\wbr}สามารถ{\wbr}กำหนด{\wbr}ชนิด{\wbr}ของ{\wbr}หัว{\wbr}รายการ{\wbr}ใน{\wbr}รูปแบบ{\wbr}ต่าง ๆ มัก{\wbr}จะ{\wbr}เรียก{\wbr}ใช้งาน{\wbr}แพ็ก{\wbr}เก{\wbr}จ \texttt{enumitem} เพราะ{\wbr}เป็น{\wbr}แพ็ก{\wbr}เก{\wbr}จ{\wbr}ที่{\wbr}มี{\wbr}ความ{\wbr}ยืดหยุ่น{\wbr}สูง เช่น สามารถ{\wbr}กำหนด{\wbr}ให้{\wbr}ตั้ง{\wbr}หัว{\wbr}รายการ{\wbr}ด้วย{\wbr}เลข{\wbr}โรมัน{\wbr}ได้ เช่น{\wbr}
+โดยปกติแล้ว หากผู้ใช้งาน \textlatin{\textrm\LaTeX} ต้องการที่จะเขียนลำดับรายการโดยที่สามารถกำหนดชนิดของหัวรายการในรูปแบบต่าง ๆ มักจะเรียกใช้งานแพ็กเกจ \texttt{enumitem} เพราะเป็นแพ็กเกจที่มีความยืดหยุ่นสูง เช่น สามารถกำหนดให้ตั้งหัวรายการด้วยเลขโรมันได้ เช่น
 
 \smallskip
 \renewcommand{\baselinestretch}{0.1}
 \begin{lstlisting}[language=LaTeX,escapechar={â},basicstyle=\ttfamily,lineskip={0.05pc}]
 \begin{enumerate}[label={\Roman*.}]
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}หนึ่ง}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สอง}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สาม}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สี่}}â
+    \item  â{\textthai{\small รายการที่หนึ่ง}}â
+    \item  â{\textthai{\small รายการที่สอง}}â
+    \item  â{\textthai{\small รายการที่สาม}}â
+    \item  â{\textthai{\small รายการที่สี่}}â
 \end{enumerate}
 \end{lstlisting}
 \renewcommand{\baselinestretch}{1.5}
 
 \begin{enumerate}[topsep=0pc,itemsep=0pc,label={\latintext\rmfamily\Roman*.}]
-    \item รายการ{\wbr}ที่{\wbr}หนึ่ง{\wbr}
-    \item รายการ{\wbr}ที่{\wbr}สอง{\wbr}
-    \item รายการ{\wbr}ที่{\wbr}สาม{\wbr}
-    \item รายการ{\wbr}ที่{\wbr}สี่{\wbr}
+    \item รายการที่หนึ่ง
+    \item รายการที่สอง
+    \item รายการที่สาม
+    \item รายการที่สี่
 \end{enumerate}
 
 \medskip
-แต่{\wbr}ก็{\wbr}มี{\wbr}ผู้{\wbr}ใช้งาน \textlatin{\textrm\LaTeX} กลุ่ม{\wbr}หนึ่ง โดย{\wbr}เฉพาะ{\wbr}ผู้{\wbr}ใช้งาน{\wbr}ภาษา{\wbr}ไทย{\wbr}มัก{\wbr}ประสบ{\wbr}ปัญหา{\wbr}ที่{\wbr}ไม่{\wbr}สามารถ{\wbr}ตั้ง{\wbr}หัว{\wbr}รายการ{\wbr}เป็น{\wbr}เลข{\wbr}ไทย (เช่น ๑ ๒ ๓ ๔ \ldots) หรือ{\wbr}อักษร{\wbr}ภาษา{\wbr}ไทย (ก ข ค ง \ldots) ได้{\wbr}โดย{\wbr}อัตโนมัติ ก่อ{\wbr}ให้{\wbr}เกิด{\wbr}ความ{\wbr}ไม่{\wbr}สะดวก{\wbr}ใน{\wbr}การ{\wbr}ใช้งาน \textlatin{\textrm\LaTeX} กับ{\wbr}ภาษา{\wbr}ไทย{\wbr}เป็น{\wbr}อย่าง{\wbr}ยิ่ง{\wbr}
+แต่ก็มีผู้ใช้งาน \textlatin{\textrm\LaTeX} กลุ่มหนึ่ง โดยเฉพาะผู้ใช้งานภาษาไทยมักประสบปัญหาที่ไม่สามารถตั้งหัวรายการเป็นเลขไทย (เช่น ๑ ๒ ๓ ๔ \ldots) หรืออักษรภาษาไทย (ก ข ค ง \ldots) ได้โดยอัตโนมัติ ก่อให้เกิดความไม่สะดวกในการใช้งาน \textlatin{\textrm\LaTeX} กับภาษาไทยเป็นอย่างยิ่ง
 
-แพ็ก{\wbr}เก{\wbr}จ \textlatin{\texttt{thaienum}} สำหรับ \textlatin{\textrm\LaTeX} จึง{\wbr}ถูก{\wbr}สร้าง{\wbr}ขึ้น{\wbr}มา{\wbr}เพื่อ{\wbr}ตอบ{\wbr}โจทย์{\wbr}ดัง{\wbr}กล่าว โดย{\wbr}ใช้{\wbr}ควบคู่{\wbr}กับ{\wbr}แพ็ก{\wbr}เก{\wbr}จ{\wbr}หลัก{\wbr}อย่าง \texttt{enumitem} นั่นเอง{\wbr}
+แพ็กเกจ \textlatin{\texttt{thaienum}} สำหรับ \textlatin{\textrm\LaTeX} จึงถูกสร้างขึ้นมาเพื่อตอบโจทย์ดังกล่าว โดยใช้ควบคู่กับแพ็กเกจหลักอย่าง \texttt{enumitem} นั่นเอง
 
 
-\section{วิธี{\wbr}ใช้งาน{\wbr}เบื้องต้น}
+\section{วิธีใช้งานเบื้องต้น}
 
-\subsection{ก่อน{\wbr}เริ่ม{\wbr}ใช้งาน}
+\subsection{ก่อนเริ่มใช้งาน}
 
-ก่อน{\wbr}ที่{\wbr}ผู้{\wbr}ใช้งาน{\wbr}จะ{\wbr}นำ{\wbr}เข้า{\wbr}แพ็ก{\wbr}เก{\wbr}จ \texttt{thaienum} นีเพื่อ{\wbr}ใช้งาน ผู้{\wbr}นั้น{\wbr}จำเป็น{\wbr}ต้อง{\wbr}เรียก{\wbr}นำ{\wbr}เข้า{\wbr}แพ็ก{\wbr}เก{\wbr}จ{\wbr}ทั้งสิ้น 2 แพ็ก{\wbr}เก{\wbr}จ{\wbr}ก่อน{\wbr}ดัง{\wbr}ต่อ{\wbr}ไป{\wbr}นี้{\wbr}
+ก่อนที่ผู้ใช้งานจะนำเข้าแพ็กเกจ \texttt{thaienum} นีเพื่อใช้งาน ผู้นั้นจำเป็นต้องเรียกนำเข้าแพ็กเกจทั้งสิ้น 2 แพ็กเกจก่อนดังต่อไปนี้
 \begin{enumerate}[topsep=0.25pc,itemsep=0pc,label={\thainum*.}]
-    \item  แพ็ก{\wbr}เก{\wbr}จ \texttt{babel} และ{\wbr}ต้อง{\wbr}นำ{\wbr}เข้า{\wbr}การ{\wbr}ใช้งาน{\wbr}ภาษา{\wbr}ไทย{\wbr}ด้วย{\wbr}
-    \item  แพ็ก{\wbr}เก{\wbr}จ \texttt{enumitem}
+    \item  แพ็กเกจ \texttt{babel} และต้องนำเข้าการใช้งานภาษาไทยด้วย
+    \item  แพ็กเกจ \texttt{enumitem}
 \end{enumerate}
 
 \begin{lstlisting}[language=LaTeX]
@@ -194,75 +194,75 @@
 \usepackage{thaienum}
 \end{lstlisting}
 
-\subsection{การ{\wbr}เลือก{\wbr}ใช้งาน}
+\subsection{การเลือกใช้งาน}
 
-เมื่อ{\wbr}ผู้{\wbr}ใช้งาน{\wbr}ต้องการ{\wbr}จะ{\wbr}เขียน{\wbr}รายการ{\wbr}ใหม่ สามารถ{\wbr}สร้าง \texttt{environment} ประะภท \texttt{enumerate} โดย{\wbr}กำหนด{\wbr}ค่า \texttt{parameter} ชื่อ \texttt{label} ให้{\wbr}มี{\wbr}หัว{\wbr}รายการ{\wbr}ตาม{\wbr}ที่{\wbr}ต้องการ{\wbr}ได้ โดย{\wbr}สามารถ{\wbr}กำหนด{\wbr}ค่า{\wbr}ต่อ{\wbr}ไป{\wbr}นี้{\wbr}
+เมื่อผู้ใช้งานต้องการจะเขียนรายการใหม่ สามารถสร้าง \texttt{environment} ประะภท \texttt{enumerate} โดยกำหนดค่า \texttt{parameter} ชื่อ \texttt{label} ให้มีหัวรายการตามที่ต้องการได้ โดยสามารถกำหนดค่าต่อไปนี้
 
 \begin{enumerate}[topsep=0.25pc,itemsep=0pc,label={\thainum*.}]
-    \item  \texttt{thainum} สำหรับ{\wbr}การ{\wbr}นับ{\wbr}โดย{\wbr}ใช้{\wbr}เลข{\wbr}ไทย ๑ ๒ ๓ ๔ ๕ \ldots
-    \item  \label{it:loalph} \texttt{thaialph} สำหรับ{\wbr}การ{\wbr}นับ{\wbr}โดย{\wbr}ใช้{\wbr}พยัญชนะ{\wbr}ไทย ก ข ค ง จ \ldots
-    \item  \label{it:hialph} \texttt{thaiAlph} สำหรับ{\wbr}การ{\wbr}นับ{\wbr}โดย{\wbr}ใช้{\wbr}พยัญชนะ{\wbr}ไทย ก ข ฃ ค ฅ \ldots\, โดย{\wbr}ไม่{\wbr}ข้าม ฃ ฅ ฆ และ{\wbr}ยัง{\wbr}มี ฤ กับ ฦ เพิ่มเติม{\wbr}หลัง ร กับ ล ตาม{\wbr}ลำดับ{\wbr}อีก{\wbr}ด้วย{\wbr}
+    \item  \texttt{thainum} สำหรับการนับโดยใช้เลขไทย ๑ ๒ ๓ ๔ ๕ \ldots
+    \item  \label{it:loalph} \texttt{thaialph} สำหรับการนับโดยใช้พยัญชนะไทย ก ข ค ง จ \ldots
+    \item  \label{it:hialph} \texttt{thaiAlph} สำหรับการนับโดยใช้พยัญชนะไทย ก ข ฃ ค ฅ \ldots\, โดยไม่ข้าม ฃ ฅ ฆ และยังมี ฤ กับ ฦ เพิ่มเติมหลัง ร กับ ล ตามลำดับอีกด้วย
 \end{enumerate}
 
 \medskip
-อย่างไร{\wbr}ก็{\wbr}ดี สำหรับ{\wbr}หัว{\wbr}รายการ{\wbr}ประเภท{\wbr}ที่ \ref{it:loalph} และ \ref{it:hialph} นั้น มี{\wbr}จำนวน{\wbr}พยัญชนะ{\wbr}จำกัด จึง{\wbr}ไม่{\wbr}สามารถ{\wbr}ใช้{\wbr}ใน{\wbr}กรณี{\wbr}ที่{\wbr}รายการ{\wbr}มี{\wbr}ความ{\wbr}ยาว{\wbr}เกิน 41 และ 46 รายการ{\wbr}ได้{\wbr}ตาม{\wbr}ลำดับ แพ็ก{\wbr}เก{\wbr}จ{\wbr}นี้{\wbr}จึง{\wbr}มี{\wbr}อนุญาต{\wbr}ให้{\wbr}กำหนด{\wbr}ค่า{\wbr}ได้{\wbr}อีก{\wbr}สอง{\wbr}ประเภท{\wbr}เพิ่มเติม ได้แก่{\wbr}
+อย่างไรก็ดี สำหรับหัวรายการประเภทที่ \ref{it:loalph} และ \ref{it:hialph} นั้น มีจำนวนพยัญชนะจำกัด จึงไม่สามารถใช้ในกรณีที่รายการมีความยาวเกิน 41 และ 46 รายการได้ตามลำดับ แพ็กเกจนี้จึงมีอนุญาตให้กำหนดค่าได้อีกสองประเภทเพิ่มเติม ได้แก่
 
 \begin{enumerate}[topsep=0.25pc,itemsep=0pc,start=4,label={\thainum*.}]
-    \item  \texttt{thaimultialph} ซึ่ง{\wbr}คล้าย{\wbr}กับ \texttt{thaialph} แต่ว่า{\wbr}ถัด{\wbr}จาก ฮ.{\wbr}นก{\wbr}ฮูก นั้น{\wbr}รายการ{\wbr}ถัด{\wbr}ไป{\wbr}จะ{\wbr}นับ{\wbr}ใหม่{\wbr}เป็น กก กข กค กง กจ \ldots\, ไป{\wbr}เรื่อย ๆ
-    \item  \texttt{thaimultiAlph} ซึ่ง{\wbr}คล้าย{\wbr}กับ \texttt{thaiAlph} แต่ว่า{\wbr}ถัด{\wbr}จาก ฮ.{\wbr}นก{\wbr}ฮูก นั้น{\wbr}รายการ{\wbr}ถัด{\wbr}ไป{\wbr}จะ{\wbr}นับ{\wbr}ใหม่{\wbr}เป็น กก กข กฃ กค กฅ \ldots\, ไป{\wbr}เรื่อย ๆ
+    \item  \texttt{thaimultialph} ซึ่งคล้ายกับ \texttt{thaialph} แต่ว่าถัดจาก ฮ.นกฮูก นั้นรายการถัดไปจะนับใหม่เป็น กก กข กค กง กจ \ldots\, ไปเรื่อย ๆ
+    \item  \texttt{thaimultiAlph} ซึ่งคล้ายกับ \texttt{thaiAlph} แต่ว่าถัดจาก ฮ.นกฮูก นั้นรายการถัดไปจะนับใหม่เป็น กก กข กฃ กค กฅ \ldots\, ไปเรื่อย ๆ
 \end{enumerate}
 
 \newpage
-\subsubsection{ตัวอย่าง{\wbr}การ{\wbr}ใช้งาน{\wbr}กับ{\wbr}เลข{\wbr}ไทย}
+\subsubsection{ตัวอย่างการใช้งานกับเลขไทย}
 
-เรา{\wbr}สามารถ{\wbr}ใช้{\wbr}เลข{\wbr}ไทย{\wbr}กับ{\wbr}รายการ{\wbr}ได้{\wbr}ดังนี้{\wbr}
+เราสามารถใช้เลขไทยกับรายการได้ดังนี้
 
 \smallskip
 \renewcommand{\baselinestretch}{0.1}
 \begin{lstlisting}[language=LaTeX,escapechar={â},basicstyle=\ttfamily,lineskip={0.05pc}]
 \begin{enumerate}[label={\thainum*.}]
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}หนึ่ง}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สอง}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สาม}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สี่}}â
+    \item  â{\textthai{\small รายการที่หนึ่ง}}â
+    \item  â{\textthai{\small รายการที่สอง}}â
+    \item  â{\textthai{\small รายการที่สาม}}â
+    \item  â{\textthai{\small รายการที่สี่}}â
 \end{enumerate}
 \end{lstlisting}
 \renewcommand{\baselinestretch}{1.5}
 
 \begin{enumerate}[topsep=0pc,itemsep=0pc,label={\thainum*.}]
-    \item  รายการ{\wbr}ที่{\wbr}หนึ่ง{\wbr}
-    \item  รายการ{\wbr}ที่{\wbr}สอง{\wbr}
-    \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}
-    \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}
+    \item  รายการที่หนึ่ง
+    \item  รายการที่สอง
+    \item  รายการที่สาม
+    \item  รายการที่สี่
 \end{enumerate}
 
-\subsubsection{ตัวอย่าง{\wbr}การ{\wbr}ใช้งาน{\wbr}กับ{\wbr}อักษร{\wbr}ไทย}
+\subsubsection{ตัวอย่างการใช้งานกับอักษรไทย}
 
-เรา{\wbr}สามารถ{\wbr}ใช้{\wbr}อักษร{\wbr}ไทย{\wbr}กับ{\wbr}รายการ{\wbr}ได้{\wbr}ดังนี้{\wbr}
+เราสามารถใช้อักษรไทยกับรายการได้ดังนี้
 
 \smallskip
 \renewcommand{\baselinestretch}{0.1}
 \begin{lstlisting}[language=LaTeX,escapechar={â},basicstyle=\ttfamily,lineskip={0.05pc}]
 \begin{enumerate}[label={\thaialph*.}]
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}หนึ่ง}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สอง}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สาม}}â
-    \item  â{\textthai{\small รายการ{\wbr}ที่{\wbr}สี่}}â
+    \item  â{\textthai{\small รายการที่หนึ่ง}}â
+    \item  â{\textthai{\small รายการที่สอง}}â
+    \item  â{\textthai{\small รายการที่สาม}}â
+    \item  â{\textthai{\small รายการที่สี่}}â
 \end{enumerate}
 \end{lstlisting}
 \renewcommand{\baselinestretch}{1.5}
 
 \begin{enumerate}[topsep=0pc,itemsep=0pc,label={\thaialph*.}]
-    \item  รายการ{\wbr}ที่{\wbr}หนึ่ง{\wbr}
-    \item  รายการ{\wbr}ที่{\wbr}สอง{\wbr}
-    \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}
-    \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}
+    \item  รายการที่หนึ่ง
+    \item  รายการที่สอง
+    \item  รายการที่สาม
+    \item  รายการที่สี่
 \end{enumerate}
 
 \newpage
-\subsubsection{ตัวอย่าง{\wbr}การ{\wbr}ใช้งาน{\wbr}กับ{\wbr}อักษร{\wbr}ไทย{\wbr}ใน{\wbr}รายการ{\wbr}ที่{\wbr}ยาว}
+\subsubsection{ตัวอย่างการใช้งานกับอักษรไทยในรายการที่ยาว}
 
-หาก{\wbr}เรา{\wbr}ตั้ง{\wbr}ค่า{\wbr}ให้ \lstinline[language=LaTeX]!label={\thaialph.}! กับ{\wbr}รายการ{\wbr}ที่{\wbr}ยาว{\wbr}เกิน 41 รายการ เรา{\wbr}จะ{\wbr}พบ{\wbr}ปัญหา{\wbr}ดังนี้ (โปรด{\wbr}ดู \texttt{source code} เพื่อ{\wbr}ความ{\wbr}ชัดเจน{\wbr}ที่{\wbr}มาก{\wbr}ขึ้น)
+หากเราตั้งค่าให้ \lstinline[language=LaTeX]!label={\thaialph.}! กับรายการที่ยาวเกิน 41 รายการ เราจะพบปัญหาดังนี้ (โปรดดู \texttt{source code} เพื่อความชัดเจนที่มากขึ้น)
 \begin{center}
     \color{red}\texttt{thaienum.tex:315: LaTeX Error: Counter too large. [ {\textbackslash}item ]}
 \end{center}
@@ -270,115 +270,115 @@
 \begin{multicols}{4}
     \scriptsize
     \begin{enumerate}[listparindent=0pc,topsep=0pc,itemsep=0pc,label={\thaialph*.}]
-        \item  รายการ{\wbr}ที่{\wbr}หนึ่ง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item[.]  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}สอง{\wbr}
+        \item  รายการที่หนึ่ง
+        \item  รายการที่สอง
+        \item  รายการที่สาม
+        \item  รายการที่สี่
+        \item  รายการที่ห้า
+        \item  รายการที่หก
+        \item  รายการที่เจ็ด
+        \item  รายการที่แปด
+        \item  รายการที่เก้า
+        \item  รายการที่สิบ
+        \item  รายการที่สิบเอ็ด
+        \item  รายการที่สิบสอง
+        \item  รายการที่สิบสาม
+        \item  รายการที่สิบสี่
+        \item  รายการที่สิบห้า
+        \item  รายการที่สิบหก
+        \item  รายการที่สิบเจ็ด
+        \item  รายการที่สิบแปด
+        \item  รายการที่สิบเก้า
+        \item  รายการที่ยี่สิบ
+        \item  รายการที่ยี่สิบเอ็ด
+        \item  รายการที่ยี่สิบสอง
+        \item  รายการที่ยี่สิบสาม
+        \item  รายการที่ยี่สิบสี่
+        \item  รายการที่ยี่สิบห้า
+        \item  รายการที่ยี่สิบหก
+        \item  รายการที่ยี่สิบเจ็ด
+        \item  รายการที่ยี่สิบแปด
+        \item  รายการที่ยี่สิบเก้า
+        \item  รายการที่สามสิบ
+        \item  รายการที่สามสิบเอ็ด
+        \item  รายการที่สามสิบสอง
+        \item  รายการที่สามสิบสาม
+        \item  รายการที่สามสิบสี่
+        \item  รายการที่สามสิบห้า
+        \item  รายการที่สามสิบหก
+        \item  รายการที่สามสิบเจ็ด
+        \item  รายการที่สามสิบแปด
+        \item  รายการที่สามสิบเก้า
+        \item  รายการที่สี่สิบ
+        \item  รายการที่สี่สิบเอ็ด
+        \item[.]  รายการที่สี่สิบสอง
         % To replicate error, replace the line above with the line below.
-        % \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}สอง{\wbr}
+        % \item  รายการที่สี่สิบสอง
     \end{enumerate}
 \end{multicols}
 
 \medskip
-แต่{\wbr}หาก{\wbr}เรา{\wbr}ตั้ง{\wbr}ค่า{\wbr}ให้ \lstinline[language=LaTeX]!label={\thaimultialph.}! กับ{\wbr}รายการ{\wbr}ที่{\wbr}ยาว{\wbr}เกิน 41 รายการ เรา{\wbr}จะ{\wbr}ได้{\wbr}ผลลัพธ์{\wbr}ดังนี้{\wbr}
+แต่หากเราตั้งค่าให้ \lstinline[language=LaTeX]!label={\thaimultialph.}! กับรายการที่ยาวเกิน 41 รายการ เราจะได้ผลลัพธ์ดังนี้
 
 \begin{multicols}{4}
     \scriptsize
     \begin{enumerate}[listparindent=0pc,topsep=0pc,itemsep=0pc,label={\thaimultialph*.}]
-        \item  รายการ{\wbr}ที่{\wbr}หนึ่ง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สิบ{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ยี่{\wbr}สิบ{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สาม{\wbr}สิบ{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}เอ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}สอง{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}สาม{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}สี่{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}ห้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}หก{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}เจ็ด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}แปด{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}สี่{\wbr}สิบ{\wbr}เก้า{\wbr}
-        \item  รายการ{\wbr}ที่{\wbr}ห้า{\wbr}สิบ{\wbr}
+        \item  รายการที่หนึ่ง
+        \item  รายการที่สอง
+        \item  รายการที่สาม
+        \item  รายการที่สี่
+        \item  รายการที่ห้า
+        \item  รายการที่หก
+        \item  รายการที่เจ็ด
+        \item  รายการที่แปด
+        \item  รายการที่เก้า
+        \item  รายการที่สิบ
+        \item  รายการที่สิบเอ็ด
+        \item  รายการที่สิบสอง
+        \item  รายการที่สิบสาม
+        \item  รายการที่สิบสี่
+        \item  รายการที่สิบห้า
+        \item  รายการที่สิบหก
+        \item  รายการที่สิบเจ็ด
+        \item  รายการที่สิบแปด
+        \item  รายการที่สิบเก้า
+        \item  รายการที่ยี่สิบ
+        \item  รายการที่ยี่สิบเอ็ด
+        \item  รายการที่ยี่สิบสอง
+        \item  รายการที่ยี่สิบสาม
+        \item  รายการที่ยี่สิบสี่
+        \item  รายการที่ยี่สิบห้า
+        \item  รายการที่ยี่สิบหก
+        \item  รายการที่ยี่สิบเจ็ด
+        \item  รายการที่ยี่สิบแปด
+        \item  รายการที่ยี่สิบเก้า
+        \item  รายการที่สามสิบ
+        \item  รายการที่สามสิบเอ็ด
+        \item  รายการที่สามสิบสอง
+        \item  รายการที่สามสิบสาม
+        \item  รายการที่สามสิบสี่
+        \item  รายการที่สามสิบห้า
+        \item  รายการที่สามสิบหก
+        \item  รายการที่สามสิบเจ็ด
+        \item  รายการที่สามสิบแปด
+        \item  รายการที่สามสิบเก้า
+        \item  รายการที่สี่สิบ
+        \item  รายการที่สี่สิบเอ็ด
+        \item  รายการที่สี่สิบสอง
+        \item  รายการที่สี่สิบสาม
+        \item  รายการที่สี่สิบสี่
+        \item  รายการที่สี่สิบห้า
+        \item  รายการที่สี่สิบหก
+        \item  รายการที่สี่สิบเจ็ด
+        \item  รายการที่สี่สิบแปด
+        \item  รายการที่สี่สิบเก้า
+        \item  รายการที่ห้าสิบ
     \end{enumerate}
 \end{multicols}
 
-\section{ขอ{\wbr}ขอบคุณ}
+\section{ขอขอบคุณ}
 
-ขอ{\wbr}ขอบคุณ{\wbr}แพ็ก{\wbr}เก{\wbr}จ \texttt{moreenum} สำหรับ{\wbr}ความคิด{\wbr}ริเริ่ม{\wbr}และ{\wbr}แนวทาง{\wbr}ที่{\wbr}จะ{\wbr}สร้าง{\wbr}แพ็ก{\wbr}เก{\wbr}จ{\wbr}นี้{\wbr}ขึ้น{\wbr}มา และ{\wbr}ขอ{\wbr}ขอบคุณ{\wbr}แพ็ก{\wbr}เก{\wbr}จ \texttt{babel-thai} สำหรับ{\wbr}การ{\wbr}สนับสนุน{\wbr}ภาษา{\wbr}ไทย{\wbr}ใน \textlatin{\textrm\LaTeX} เรื่อย{\wbr}มา{\wbr}
+ขอขอบคุณแพ็กเกจ \texttt{moreenum} สำหรับความคิดริเริ่มและแนวทางที่จะสร้างแพ็กเกจนี้ขึ้นมา และขอขอบคุณแพ็กเกจ \texttt{babel-thai} สำหรับการสนับสนุนภาษาไทยใน \textlatin{\textrm\LaTeX} เรื่อยมา
 
 
 \end{document}

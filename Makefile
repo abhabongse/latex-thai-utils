@@ -1,7 +1,8 @@
-thaienum.pdf: thaienum.tex
-	latexmk -pdf -interaction=nonstopmode thaienum.tex
+thaienum.pdf: thaienum.post.tex
+	latexmk -pdf -interaction=nonstopmode thaienum.post.tex
 	latexmk -c
-thaienum.tex: thaienum.pre.tex
-	swath -f latex -u u,u < thaienum.pre.tex > thaienum.tex
+	mv thaienum.post.pdf thaienum.pdf
+thaienum.post.tex: thaienum.tex
+	swath -f latex -u u,u < thaienum.tex > thaienum.post.tex
 clean:
-	rm -f thaienum.tex thaienum.pdf
+	rm -f thaienum.post.tex thaienum.pdf
