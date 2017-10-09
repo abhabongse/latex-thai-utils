@@ -31,15 +31,23 @@
 \usepackage[main=thai,thai,english]{babel}
 \usepackage[utf8x]{inputenc}
 
-% Complicated configuration of fonts
+%% Complicated configuration of fonts
 \makeatletter
 \usepackage[resetletterform]{thaifont-setup}
-\def\fontstlwg@scale{0.9}  % new feature in fonts-tlwg package
-\def\letterformdefault@en{sf}  % requires 'resetletterform' option
-\def\letterformdefault@th{sf}  % requires 'resetletterform' option
-\def\familydefault@th@sf{laksaman}  % defaults to TH Sarabun New
-\def\familydefault@th@tt{zi4}  % monospaced will always be inconsolata
-\def\encodingdefault@th@tt{T1}  % make sure that inconsolata uses T1
+% Scale all fonts from fonts-tlwg package (recently updated feature).
+\def\fontstlwg@scale{0.9}
+% Use sans-serif as default for both Latin and Thai scripts.
+% This requires the option 'resetletterform' for thaifont-setup package.
+\def\letterformdefault@en{sf}
+\def\letterformdefault@th{sf}
+% Set TH Sarabus New as default Thai sans-serif font.
+\def\familydefault@th@sf{laksaman}
+% Use light/semibold variant for mdseries and bfseries font in opensans.
+\def\seriesdefault@en@sf@md{l}
+\def\seriesdefault@en@sf@bf{sb}
+% Default to inconsolata for monospaced fonts (with encoding T1)
+\def\familydefault@th@tt{zi4}
+\def\encodingdefault@th@tt{T1}
 \makeatother
 
 %% Set text leading
@@ -54,5 +62,16 @@
 
 \begin{document}
 \maketitle
+
+\latintext
+English text
+\bfseries
+followed by
+\thaitext
+ภาษา{\wbr}ไทย{\wbr}
+\mdseries
+กลับ{\wbr}มา{\wbr}เป็น{\wbr}เหมือน{\wbr}เดิม{\wbr}
+\latintext
+and ends with English.
 
 \end{document}
