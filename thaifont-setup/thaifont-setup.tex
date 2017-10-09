@@ -1,0 +1,58 @@
+%% thaifont-setup.tex
+%% Copyright 2017 Abhabongse Janthong
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl/lppl-1-3c.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% The Current Maintainer of this work is Abhabongse Janthong.
+% This work consists of all files in the repository, including
+% thaifont-setup.sty and thaifont-setup[.pre].tex.
+%
+% This file provides the basic howto usages of the package 'thaifont-setup'.
+%
+\documentclass[11pt]{ltxguide}
+
+%% Loading main utility package
+\usepackage{etoolbox}
+
+%% Setup languages, fonts, and encodings
+\usepackage[LTH,T1]{fontenc}
+\usepackage{libertineRoman}
+\usepackage[defaultsans,scale=0.9]{opensans}
+\usepackage[varqu,varl]{inconsolata}
+\usepackage{amsthm}
+\usepackage[libertine]{newtxmath}
+\usepackage[main=thai,thai,english]{babel}
+\usepackage[utf8x]{inputenc}
+
+% Complicated configuration of fonts
+\makeatletter
+\usepackage[resetletterform]{thaifont-setup}
+\def\fontstlwg@scale{0.9}  % new feature in fonts-tlwg package
+\def\letterformdefault@en{sf}  % requires 'resetletterform' option
+\def\letterformdefault@th{sf}  % requires 'resetletterform' option
+\def\familydefault@th@sf{laksaman}  % defaults to TH Sarabun New
+\def\familydefault@th@tt{zi4}  % monospaced will always be inconsolata
+\def\encodingdefault@th@tt{T1}  % make sure that inconsolata uses T1
+\makeatother
+
+%% Set text leading
+\RequirePackage{setspace}
+\setstretch{1.33}
+
+%% Document metadata
+\title{แพ็กเกจ \textlatin{\texttt{thaifont-setup}}}
+\author{อาภาพงศ์ จันทร์ทอง}
+
+\date{เวอร์ชัน 0.1\\9 ตุลาคม 2017}
+
+\begin{document}
+\maketitle
+
+\end{document}
