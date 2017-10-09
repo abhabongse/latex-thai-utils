@@ -1,8 +1,23 @@
-thaienum.pdf: thaienum.post.tex
-	latexmk -pdf -interaction=nonstopmode thaienum.post.tex
+.PHONY: all clean cleanall
+pdf = thaienum.pdf
+post_pdf = thaienum.post.pdf
+tex = thaienum.tex
+post_tex = thaienum.post.tex
+sty = thaienum.sty
+
+all: $(pdf)
+
+$(pdf): $(post_tex) $(sty)
+	latexmk -pdf -interaction=nonstopmode $(post_tex)
 	latexmk -c
-	mv thaienum.post.pdf thaienum.pdf
-thaienum.post.tex: thaienum.tex
-	swath -f latex -u u,u < thaienum.tex > thaienum.post.tex
+	mv $(post_pdf) $(pdf)
+
+$(post_tex): $(tex)
+	swath -f latex -u u,u < $(tex) > $(post_tex)
+
 clean:
-	rm -f thaienum.post.tex thaienum.pdf
+	latexmk -c
+	rm -f $(post_tex)
+
+cleanall: clean
+	rm -f $(pdf)
