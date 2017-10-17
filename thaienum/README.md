@@ -14,9 +14,12 @@ such as `\thainum*` or `\thaimultialph*` in conjunction with the package
 
 The author and maintainer of this package is Abhabongse Janthong. Anything
 regardling this package such as bug report or suggestions should be reported
-via GitHub at https://github.com/abhabongse/latex-thaienum/issues.
+via GitHub at https://github.com/abhabongse/latex-thai-utils/issues.
+
+This package is [hosted on CTAN](https://www.ctan.org/pkg/thaienum) and can be
+obtained through them.
 
 ## License
 
-This package, which includes all files in this repository, is released under
+This package, which includes all files in this directory, is released under
 the [LaTeX project public license (LPPL), version 1.3c](https://www.latex-project.org/lppl/lppl-1-3c/).

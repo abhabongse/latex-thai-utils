@@ -9,7 +9,10 @@ This [thaienum](thaienum/) LaTeX package provides the command to use Thai numera
 (๑ ๒ ๓ ๔ ...) or Thai characters (ก ข ค ง ...) as labels in enumerate
 environment.
 
-## License
+## LaTeX Thai Font Setup (thaifont-setup)
 
-This package, which includes all files in this repository, is released under
-the [LaTeX project public license (LPPL), version 1.3c](https://www.latex-project.org/lppl/lppl-1-3c/).
+This [thaifont-setup](thaifont-setup/) LaTeX package provides an alternative way to set up font
+environment settings in complement to another package
+[fonts-tlwg](https://github.com/tlwg/fonts-tlwg/). It relies on the font
+definition files (`*.fd`) in the most recent update of
+[fonts-tlwg version 0.6.4](https://github.com/tlwg/fonts-tlwg/tree/v0.6.4).
